@@ -1,9 +1,8 @@
 import { Router } from "express";
-const router =new Router();
-router.get('/',(req,res) =>{
-    res.render('subjects/all');
-} );
-
-
-
+import {create , index ,store , show} from '../controller/subject.js';
+const router = new Router();
+router.get('/',index);
+router.get('/create',create);
+router.post('/',store);
+router.get('/:_id', show);
 export default router;

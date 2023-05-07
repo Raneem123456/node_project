@@ -1,5 +1,5 @@
 import { Schema,model } from "mongoose";
-const department = new Schema({
+const subject = new Schema({
   name :{
     type: String,
     rquired: true
@@ -8,9 +8,11 @@ const department = new Schema({
     type: String,
     rquired: false,
   }, 
+  department: {
+    type:Schema.Types.ObjectId,
+    required: false,
+    ref: 'department'
+  }
 },{timestamps: true}); 
 
-model('department',department);
-const departmentmodel= model('department',department);
-export default departmentmodel;
-
+export default model('subject',subject);
